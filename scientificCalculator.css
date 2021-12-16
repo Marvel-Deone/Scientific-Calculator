@@ -1,0 +1,63 @@
+body {
+    overflow-y: hidden;
+}
+.over-all {
+    width: 320px;
+    height: 560px;
+    margin-top: 60px !important;
+    margin: auto;
+    background-color: black;
+    /* background-color: #354874; */
+    border: 6px solid black;
+    border-radius: 8px;
+    padding: 16px;
+} 
+#btn {
+    margin-top: 35px;
+}
+
+#res {
+    /* background-color: red; */
+    margin-top: 80px;
+    margin-left: 12px;
+    width: 270px;
+    border-radius: 3px;
+    padding: 20px;
+    margin: auto;
+    background-color: #8A8A8A; 
+    /* height: 70px;  */
+    border: none;
+}
+
+#ans {
+    margin-top: -10px !important;
+    margin-left: 12px;
+    width: 270px;
+    border-radius: 3px;
+    padding: 20px;
+    margin: auto;
+    background-color: #8A8A8A; 
+    height: 20px; 
+    border: none;
+    text-align: end;
+}
+
+button {
+    width: 50px;
+    /* background-color: #262626; */
+    background-color: #456C83;
+    color: white;
+    border: 3px solid gray;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 5px;
+    font-size: 15px;
+}  
+#inp:hover {
+    background-color: white;
+    color:  black;
+    font-weight: bold;
+}
+.equalSign {
+    background-color: #79EF45;
+}

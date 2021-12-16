@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="scientificCalculator.css">
+</head>
+<body>
+    <div class="over-all">
+        <p style="color: white; margin-top: -10px; font-weight: bolder; font-size: 18px;">Marvel Calculator</p>
+    <div id="res"></div>
+    <div id="ans"></div>
+    <div id="btn">
+    <button id="inp" onclick="myShift()"  id="shift">shift</button>
+    <button id="inp" id="on" onclick="on()">on</button>
+    <br>
+    
+    
+    
+    <!-- onclick="ans.innerHTML += '<sup>m</sup>'" -->
+    
+  
+   
+    
+    <button id="inp" onclick="raisepower()">x <sup>2</sup></button>
+    <button id="inp" onclick="power('^')">^</button>
+    <button id="inp" onclick="myIn()">in</button>
+    <button id="inp" onclick="addToScreen('(')">(</button>
+    <button id="inp" onclick="addToScreen(')')">)</button>
+   
+    <button id="inp" onclick="log('log')">log</button>
+    <button id="inp" onclick="addToScreen('sin(')">sin</button>
+    <button id="inp" onclick="addToScreen('cos(')">cos</button>
+    <button id="inp" onclick="addToScreen('tan(')">tan</button>
+    <!-- <button id="inp" onclick="pi()">PI</button> -->
+    <button id="inp" onclick="power3()">x <sup>3</sub></button>
+        
+    <!-- <button onclick="addToScreen('X&#178')">X&#178</button> -->
+    <!-- <button onclick="addToScreen('&#8730')">&#8730</button> -->
+    <button id="inp" onclick="square('sqrt')">&#8730</button>
+    <button id="inp" onclick="mySquare()">x <sup>-1</sub></button> 
+        <!-- <BR></BR> -->
+   
+        
+        <button id="inp" onclick="addToScreen (7)">7</button>
+        <button id="inp" onclick="addToScreen (8)">8</button>
+        <button id="inp" onclick="addToScreen (9)">9</button>
+        <button id="inp" onclick="del()">Del</button>
+        <button id="inp" id="off" onclick="ac()">AC</button> 
+       
+        <button id="inp" onclick="addToScreen (4)">4</button>
+        <button id="inp" onclick="addToScreen (5)">5</button>
+        <button id="inp" onclick="addToScreen (6)">6</button>
+        <button id="inp" onclick="addToScreen ('*')">&times;</button>
+        <button id="inp" onclick="addToScreen ('/')">/</button>
+
+        
+    
+    <button id="inp" onclick="addToScreen (1)">1</button>
+    <button id="inp" onclick="addToScreen (2)">2</button>
+    <button id="inp" onclick="addToScreen (3)">3</button>
+    <button id="inp" onclick="addToScreen ('+')">+</button>
+    <button id="inp" onclick="addToScreen ('-')">-</button>
+
+    <button id="inp" onclick="addToScreen (0)">0</button>
+    <button id="inp" onclick="addToScreen('.')">.</button>
+    <button id="inp" onclick="pi()">Exp</button>
+    <!-- <button id="inp" onclick="addToScreen('e')">Exp</button> -->
+    <button id="inp" id="equal" class="equalSign" onclick="add()">=</button>
+    <button id="inp" id="equal" onclick="percent()">%</button>
+   
+    </div>
+
+    </div>
+
+    <script>
+        var a =false;
+        var b ;
+        var val = 0 + 0;
+        
+        // const percent =()=> {
+        //     // res.innerHTML += "%"
+        //     val =button.innerHTML;
+        //     // <!-- button.innerHTML + "%" -->
+        //     ans.innerHTML = Math.hypot;
+        // }
+        const myIn =()=> {
+             if (a==true) {
+                ans.innerHTML =Math.log(res.innerHTML);
+            }
+            if (b==true) {
+                ans.innerHTML =0+"."
+                res.innerHTML = "e";
+            }
+            
+        }
+        const myShift =()=> {
+            res.innerHTML += '<sup>s</sup>';
+            ans.innerHTML =0 +"."
+            b =true;
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+
+        const on=()=> {
+            a=true;
+            res.innerHTML =""
+            ans.innerHTML =0 + '.';
+        }
+
+        const addToScreen =(val)=> {
+            res.innerHTML += val;
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+
+        const raisepower =()=> {
+            ans.innerHTML =Math.pow(res.innerHTML, 2);
+            res.innerHTML += "<sup>2</sup>";
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+        const power3 =()=> {
+            ans.innerHTML =Math.pow(res.innerHTML, 3);
+            res.innerHTML += "<sup>3</sub>";
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+        const mySquare =()=> {
+            ans.innerHTML =Math.pow(res.innerHTML, -1);
+            res.innerHTML += "<sup>-1</sub>";
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+
+        const square =()=> {
+            ans.innerHTML =Math.sqrt(res.innerHTML);
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+        const log =()=> {
+            ans.innerHTML =Math.log(res.innerHTML);
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+
+        const pi =()=> {
+            b= true;
+            res.innerHTML ="pi"
+            res.innerHTML = Math.PI.toFixed(3);
+           
+            if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+
+        const ac =()=> {
+            res.innerHTML ="";
+            ans.innerHTML =0 + '.';
+            if ( b==true) {
+                res.innerHTML = "";
+                // ans.innerHTML = "";
+                a =false;
+                ans.innerHTML= 'shutdown';
+                document.location.reload();
+            }
+           
+        }
+
+        const del =()=> {
+            var getval =res.innerHTML;
+            res.innerHTML = getval.slice(0,-1);if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+        }
+
+        const add =()=> {
+            var one = res.innerHTML.slice(0, 1);
+            var two =res.innerHTML.slice(1);
+            var three = res.innerHTML.slice(0, 3);
+            var four = res.innerHTML.slice(4, -1);
+        //    var char =res.innerHTML.charAt(1);
+        //    var sly=res.innerHTML.slice()
+            if (three == "sin") {
+            ans.innerHTML =Math.sin(four* Math.PI/180);
+         }
+            else if (three == "cos") {
+            ans.innerHTML =Math.cos(four* Math.PI/180);
+         }
+            else if (three == "log") {
+            ans.innerHTML =Math.log(four);
+         }
+            else if (three == "tan") {
+            ans.innerHTML =Math.tan(four* Math.PI/180);
+         }
+        //     else if (one =="&#8730") {
+        //     ans.innerHTML =Math.sqrt(two);
+        //  }
+            else if (one == "e") {
+            ans.innerHTML =Math.exp(two);
+         }
+        //     else if (one == "sqrt") {
+        //     ans.innerHTML =Math.sqrt(two);
+        //  }
+
+        else  if (a==false) {
+                res.innerHTML = "";
+                ans.innerHTML = "";
+            }
+         else{
+            ans.innerHTML =eval(res.innerHTML);
+         }
+
+        }
+    </script>
+</body>
+</html>
